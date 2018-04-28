@@ -1,10 +1,12 @@
 package com.kangear.cheji;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
 public class ToastShow {
+	private static final String TAG = "ToastShow";
 	private final Context context;
 	private Toast toast = null;
 
@@ -41,6 +43,7 @@ public class ToastShow {
 		} else {
 			toast.setText(text);
 		}
+		Log.i(TAG, text);
 		toast.show();
 	}
 
@@ -50,6 +53,7 @@ public class ToastShow {
 		} else {
 			toast.setText(text);
 		}
+		Log.i(TAG, text);
 		toast.show();
 	}
 }

@@ -12,15 +12,20 @@ import java.io.InputStream;
 import cn.trinea.android.common.util.FileUtils;
 import cn.trinea.android.common.util.ShellUtils;
 
+import static com.kangear.cheji.MainActivity.SPD_KEY_STATE_DOWN;
+import static com.kangear.cheji.MainActivity.SPD_KEY_VALUE_14;
+import static com.kangear.cheji.MainActivity.SPD_KEY_VALUE_19;
+import static com.kangear.cheji.MainActivity.SPD_KEY_VALUE_20;
+
 public class MediaYuyinReceiver extends BroadcastReceiver {
 
     public void onReceive(Context paramContext, Intent paramIntent) {
         int value = paramIntent.getIntExtra("value", 0);
         int state = paramIntent.getIntExtra("state", 0);
         String msg = "value: " + value + " state: " + state;
-        ToastShow.getInstance(paramContext).show(msg);
+        //ToastShow.getInstance(paramContext).show(msg);
 
-        if (state != 1) {
+        if (state != SPD_KEY_STATE_DOWN) {
             return;
         }
 
@@ -28,13 +33,13 @@ public class MediaYuyinReceiver extends BroadcastReceiver {
         String key = "KEYCODE_MEDIA_NEXT";
 
         switch (value) {
-            case 14:
+            case SPD_KEY_VALUE_14:
                 key = "KEYCODE_MEDIA_PLAY";
                 break;
-            case 19:
+            case SPD_KEY_VALUE_19:
                 key = "KEYCODE_MEDIA_PREVIOUS";
                 break;
-            case 20:
+            case SPD_KEY_VALUE_20:
                 key = "KEYCODE_MEDIA_NEXT";
                 break;
             default:
