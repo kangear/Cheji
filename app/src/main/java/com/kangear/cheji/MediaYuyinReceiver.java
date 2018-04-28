@@ -20,7 +20,7 @@ public class MediaYuyinReceiver extends BroadcastReceiver {
         String msg = "value: " + value + " state: " + state;
         ToastShow.getInstance(paramContext).show(msg);
 
-        if (state != 2) {
+        if (state != 1) {
             return;
         }
 

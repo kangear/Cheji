@@ -9,18 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <receiver android:name="com.kangear.cheji.MediaYuyinReceiver">
+        <receiver android:name=".MediaYuyinReceiver">
             <intent-filter>
-                <action android:name="com.spd.system.key"/>
+                <action android:name="com.spd.system.key" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
